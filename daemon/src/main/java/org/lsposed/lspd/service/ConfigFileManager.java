@@ -99,9 +99,9 @@ public class ConfigFileManager {
             Files.createDirectories(basePath);
             SELinux.setFileContext(basePath.toString(), "u:object_r:system_file:s0");
             Files.createDirectories(configDirPath);
-            createLogDirPath();
+            //createLogDirPath();
         } catch (IOException e) {
-            Log.e(TAG, Log.getStackTraceString(e));
+            //Log.e(TAG, Log.getStackTraceString(e));
         }
     }
 
@@ -118,7 +118,7 @@ public class ConfigFileManager {
         if (!Files.isDirectory(logDirPath, LinkOption.NOFOLLOW_LINKS)) {
             Files.deleteIfExists(logDirPath);
         }
-        Files.createDirectories(logDirPath);
+        //Files.createDirectories(logDirPath);
     }
 
     public static Resources getResources() {
@@ -138,7 +138,7 @@ public class ConfigFileManager {
                 //noinspection deprecation
                 res = new Resources(am, null, null);
         } catch (Throwable e) {
-            Log.e(TAG, Log.getStackTraceString(e));
+            //Log.e(TAG, Log.getStackTraceString(e));
         }
     }
 
@@ -150,7 +150,7 @@ public class ConfigFileManager {
                 //noinspection deprecation
                 res.updateConfiguration(conf, res.getDisplayMetrics());
         } catch (Throwable e) {
-            Log.e(TAG, "reload configuration", e);
+            //Log.e(TAG, "reload configuration", e);
         }
     }
 
@@ -206,9 +206,9 @@ public class ConfigFileManager {
                     Files.move(logDirPath, oldLogDirPath);
                 }
             }
-            Files.createDirectories(logDirPath);
+            //Files.createDirectories(logDirPath);
         } catch (IOException e) {
-            Log.e(TAG, Log.getStackTraceString(e));
+            //Log.e(TAG, Log.getStackTraceString(e));
         }
     }
 
@@ -217,22 +217,22 @@ public class ConfigFileManager {
     }
 
     static File getNewVerboseLogPath() throws IOException {
-        createLogDirPath();
+        //createLogDirPath();
         return logDirPath.resolve(getNewLogFileName("verbose")).toFile();
     }
 
     static File getNewModulesLogPath() throws IOException {
-        createLogDirPath();
+        //createLogDirPath();
         return logDirPath.resolve(getNewLogFileName("modules")).toFile();
     }
 
     static File getPropsPath() throws IOException {
-        createLogDirPath();
+        //createLogDirPath();
         return logDirPath.resolve("props.txt").toFile();
     }
 
     static File getKmsgPath() throws IOException {
-        createLogDirPath();
+        //createLogDirPath();
         return logDirPath.resolve("kmsg.log").toFile();
     }
 
@@ -259,7 +259,7 @@ public class ConfigFileManager {
             });
             ConfigManager.getInstance().exportScopes(os);
         } catch (Throwable e) {
-            Log.w(TAG, "get log", e);
+            //Log.w(TAG, "get log", e);
             throw new RemoteException(Log.getStackTraceString(e));
         }
     }
