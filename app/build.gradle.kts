@@ -135,7 +135,7 @@ materialThemeBuilder {
 }
 
 dependencies {
-    val glideVersion = "4.13.1"
+    val glideVersion = "4.13.2"
     val navVersion: String by project
     annotationProcessor("com.github.bumptech.glide:compiler:$glideVersion")
     implementation("androidx.activity:activity:1.4.0")
@@ -165,7 +165,7 @@ dependencies {
     implementation("dev.rikka.rikkax.widget:borderview:1.1.0")
     implementation("dev.rikka.rikkax.widget:mainswitchbar:1.0.2")
     implementation("dev.rikka.rikkax.layoutinflater:layoutinflater:1.2.0")
-    implementation("me.zhanghai.android.appiconloader:appiconloader:1.3.1")
+    implementation("me.zhanghai.android.appiconloader:appiconloader:1.4.0")
     implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
     implementation(projects.services.managerService)
 
